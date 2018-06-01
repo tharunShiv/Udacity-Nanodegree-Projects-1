@@ -50,14 +50,12 @@ ul {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   min-height: 56px;
   transition: min-height 0.3s;
-  max-width:100%;
 }
 
 .header__inner {
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width:100%;
 }
 
 .header__logo {
@@ -69,7 +67,7 @@ ul {
 
 .header__title {
   font-weight: 300;
-  font-size: 2em;
+  font-size: 4em;
   margin: 0.5em 0.25em;
   display: inline-block;
   color: #212121;
@@ -83,10 +81,9 @@ ul {
  */
 
 .nav {
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  max-width:100%;
 }
 
 .nav__list {
@@ -108,6 +105,7 @@ ul {
 .nav a {
   text-decoration: none;
   color: #616161;
+  padding: 1.5em;
 }
 
 .nav a:hover {
@@ -124,7 +122,7 @@ ul {
 
 main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  max-width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -143,7 +141,6 @@ main {
  */
 
 .hero {
-  float: left;
   width: 100%;
   position: relative;
   background-image: url("./images/dog.jpg");
@@ -171,11 +168,10 @@ main {
  */
 
 .top-news {
-  float: right;
-  width:100%;
-  height: 300px;
+  max-height: 300px;
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
+  width: 100%;
 }
 
 .news__title {
@@ -202,6 +198,7 @@ main {
 .top-news__item a {
   text-decoration: none;
   color: #666;
+  padding: 1.5em inherit;
 }
 
 .top-news__item a:hover,
@@ -217,9 +214,8 @@ main {
  */
 
 .scores {
-  width: 100%;
-  float: left;
   padding-top: 1em;
+  flex-grow: 1;
 }
 
 .scores__table {
@@ -266,8 +262,7 @@ main {
  */
 
 .weather {
-  float: right;
-  width: 320px;
+  flex-grow: 1;
   padding: 1em;
 }
 
@@ -317,11 +312,12 @@ main {
 
 /*
  *
- * Weather
+ * Recent News
  *
  */
 
 .recent-news {
+  flex-grow: 1;
   clear: both;
   padding: 1em;
 }
@@ -344,6 +340,7 @@ main {
 .snippet__title a {
   text-decoration: none;
   color: #666;
+  padding: 1.5em inherit;
 }
 
 .snippet__title a:hover,
@@ -372,12 +369,5 @@ footer li {
 footer a {
   text-decoration: none;
   color: #333;
-}
-
-img, object, embed, video {
-  max-width:100%;
-}
-
-a {
-  padding:2em;
+  padding: 1.5em;
 }
