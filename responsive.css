@@ -19,7 +19,7 @@
   .header__title {
     margin-left: 0;
     font-size: 2em;
-    vertical-align: bottom; 
+    vertical-align: bottom;
   }
   .nav {
     z-index: 10;
@@ -52,8 +52,35 @@
     width: 32px;
     fill: #E0E0E0;
   }
+  .scores {
+
+    overflow-x: auto;
+  }
+  .description > h2 {
+    font-size: 17px;
+  }
+  footer a{
+    padding:0px;
+  }
+  .snippet__thumbnail {
+    display:none;
+  }
+  .hidden_when_small {
+    display:none;
+  }
+
 }
 
+@media screen and (max-width: 338px) {
+  .description > h2 {
+    font-size: 15px;
+  }
+
+  footer a{
+    padding:0px;
+  }
+
+}
 @media screen and (min-width: 550px) {
   .hero {
     order: 0;
