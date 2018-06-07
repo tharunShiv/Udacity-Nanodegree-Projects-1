@@ -63,6 +63,15 @@ module.exports = function(grunt) {
         }]
       },
     },
+
+    sass : {
+      build : {
+        files: [{
+          src: 'sass/styles.scss',
+          dest:'css/styles.css'
+        }]
+      }
+    },
   });
   
   grunt.loadNpmTasks('grunt-responsive-images');
@@ -70,5 +79,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
-
+  
+  
 };
