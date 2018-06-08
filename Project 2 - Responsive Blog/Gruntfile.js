@@ -64,21 +64,24 @@ module.exports = function(grunt) {
       },
     },
 
-    sass : {
-      build : {
+    sass: {
+      build: {
         files: [{
-          src: 'sass/styles.scss',
-          dest:'css/styles.css'
+          src: 'scss/styles.scss',
+          dest: 'css/main.css'
         }]
-      }
+      },
     },
   });
   
+  //load tasks
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
+  grunt.loadNpmTasks('grunt-sass');
+
+  //register tasks
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
-  
-  
+
 };

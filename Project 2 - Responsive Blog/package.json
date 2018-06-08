@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/udacity/responsive-images.git"
+    "url": "https://github.com/udacity/responsive-images.git"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "~1.0.3",
     "grunt-contrib-clean": "~1.1.0",
-    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-contrib-nodeunit": "~2.0.0",
@@ -19,16 +18,5 @@
   },
   "dependencies": {
     "grunt-responsive-images": "^1.10.1"
-  },
-  "description": "## Your Goals: ##",
-  "bugs": {
-    "url": "https://github.com/udacity/responsive-images/issues"
-  },
-  "homepage": "https://github.com/udacity/responsive-images#readme",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

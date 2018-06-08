@@ -1,5 +1,8 @@
 @import "reset";
 @import "variables";
-@import "mixin";
+@import "mixins";
 
-//other styles
+//other styles goes here
+#main-nav {
+    background-color: $deepBlue;
+}
