@@ -12,16 +12,87 @@ module.exports = function(grunt) {
     responsive_images: {
       dev: {
         options: {
-          engine: 'im',
-          sizes: [{
+          engine: 'gm',
+          sizes: [
+            {
             /*
             Change these:
-            
+
             width: ,
             suffix: ,
             quality:
             */
-          }]
+            name:"sm",
+            suffix:"_1x",
+            quality:60,
+            width:600
+          },
+          {
+          /*
+          Change these:
+
+          width: ,
+          suffix: ,
+          quality:
+          */
+          name:"sm",
+          suffix:"_2x",
+          quality:60,
+          width:1200
+        },
+        {
+        /*
+        Change these:
+
+        width: ,
+        suffix: ,
+        quality:
+        */
+        name:"md",
+        suffix:"_1x",
+        quality:60,
+        width:900
+        },
+        {
+        /*
+        Change these:
+
+        width: ,
+        suffix: ,
+        quality:
+        */
+        name:"md",
+        suffix:"_2x",
+        quality:60,
+        width:1800
+        },
+        {
+        /*
+        Change these:
+
+        width: ,
+        suffix: ,
+        quality:
+        */
+        name:"lg",
+        suffix:"_1x",
+        quality:60,
+        width:1440
+        },
+        {
+        /*
+        Change these:
+
+        width: ,
+        suffix: ,
+        quality:
+        */
+        name:"lg",
+        suffix:"_2x",
+        quality:60,
+        width:2880
+        }
+        ]
         },
 
         /*
@@ -73,7 +144,7 @@ module.exports = function(grunt) {
       },
     },
   });
-  
+
   //load tasks
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -82,6 +153,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   //register tasks
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
+  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images', 'sass']);
 
 };
