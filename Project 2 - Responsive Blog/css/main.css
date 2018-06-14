@@ -24,14 +24,16 @@ body, nav {
     text-decoration-color: #756027; }
 
 .blog_post {
+  background-color: #ced6e0;
   width: 85%;
   padding: 15px;
-  max-width: 800px;
+  max-width: 600px;
   margin: 10px auto;
   border: 1px solid #7aadff; }
   .blog_post h2 {
     text-align: center; }
   .blog_post p {
+    background-color: #dfe4ea;
     text-align: center;
     margin: 5px 10px;
     padding: 5px 10px; }

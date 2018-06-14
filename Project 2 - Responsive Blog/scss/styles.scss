@@ -27,16 +27,18 @@
 
 
 .blog_post {
+    background-color: $blogPostBg;
     width:85%;
     padding:15px;
-    max-width:800px;
-    margin:10px auto;  
+    max-width:600px;
+    margin:10px auto;
     border:1px solid $lightBlue;
     h2 {
         text-align: center;
 
     }
     p {
+        background-color: $blogPBg;
         text-align: center;
         margin:5px 10px;
         padding:5px 10px;
@@ -46,7 +48,7 @@
 img {
     width:100%;
     margin:auto;
-    
+
 }
 
 .blog_footer {
@@ -56,7 +58,7 @@ img {
 }
 
 #footer {
-    width:100%;   
+    width:100%;
     margin:auto;
 }
 
@@ -66,6 +68,6 @@ img {
     padding:20px;
     a {
         color:white;
-        
+
     }
 }
