@@ -154,5 +154,6 @@ module.exports = function(grunt) {
 
   //register tasks
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images', 'sass']);
+  
 
 };
