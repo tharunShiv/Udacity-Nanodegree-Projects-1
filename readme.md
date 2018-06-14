@@ -27,3 +27,6 @@
         1. Clone/Download this project
         2. Open the index.html
         3. Test the responsivity using the chrome dev tools.        
+    
+## Amount of MegaBytes Transferred Before Stage 1 Image Optimization
+<img src="https://raw.githubusercontent.com/tharunShiv/Udacity-Nanodegree-Projects-1/master/Project%202%20-%20Responsive%20Blog/afterScreenshot.PNG" width="100%">
