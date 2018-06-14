@@ -29,7 +29,8 @@ body, nav {
   padding: 15px;
   max-width: 600px;
   margin: 10px auto;
-  border: 1px solid #7aadff; }
+  border: 1px solid #7aadff;
+  box-shadow: 5px 5px 10px grey; }
   .blog_post h2 {
     text-align: center; }
   .blog_post p {
