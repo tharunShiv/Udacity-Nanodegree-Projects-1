@@ -24,7 +24,7 @@ body, nav {
     text-decoration-color: #756027; }
 
 .blog_post {
-  background-color: #ced6e0;
+  background-color: #f1f2f6;
   width: 85%;
   padding: 15px;
   max-width: 600px;
@@ -34,6 +34,7 @@ body, nav {
   .blog_post h2 {
     text-align: center; }
   .blog_post p {
+    border-radius: 5%;
     background-color: #dfe4ea;
     text-align: center;
     margin: 5px 10px;
@@ -58,3 +59,6 @@ img {
   padding: 20px; }
   .ftr a {
     color: white; }
+  .ftr .fa {
+    color: white;
+    padding: 2px; }
