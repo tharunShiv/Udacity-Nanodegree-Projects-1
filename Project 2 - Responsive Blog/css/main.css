@@ -24,14 +24,18 @@ body, nav {
     text-decoration-color: #756027; }
 
 .blog_post {
+  background-color: #f1f2f6;
   width: 85%;
   padding: 15px;
-  max-width: 800px;
+  max-width: 600px;
   margin: 10px auto;
-  border: 1px solid #7aadff; }
+  border: 1px solid #7aadff;
+  box-shadow: 5px 5px 10px grey; }
   .blog_post h2 {
     text-align: center; }
   .blog_post p {
+    border-radius: 5%;
+    background-color: #dfe4ea;
     text-align: center;
     margin: 5px 10px;
     padding: 5px 10px; }
@@ -55,3 +59,6 @@ img {
   padding: 20px; }
   .ftr a {
     color: white; }
+  .ftr .fa {
+    color: white;
+    padding: 2px; }

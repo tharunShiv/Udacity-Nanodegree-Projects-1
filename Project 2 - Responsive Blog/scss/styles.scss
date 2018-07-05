@@ -13,6 +13,7 @@
     margin-bottom: 20px;
     z-index:-100;
     h1 {
+
         padding:20px;
         margin:0;
         margin-bottom:10px;
@@ -27,16 +28,20 @@
 
 
 .blog_post {
+    background-color: $blogPostBg;
     width:85%;
     padding:15px;
-    max-width:800px;
-    margin:10px auto;  
+    max-width:600px;
+    margin:10px auto;
     border:1px solid $lightBlue;
+    box-shadow:5px 5px 10px grey;
     h2 {
         text-align: center;
 
     }
     p {
+        border-radius: 5%;
+        background-color: $blogPBg;
         text-align: center;
         margin:5px 10px;
         padding:5px 10px;
@@ -46,7 +51,7 @@
 img {
     width:100%;
     margin:auto;
-    
+
 }
 
 .blog_footer {
@@ -56,7 +61,7 @@ img {
 }
 
 #footer {
-    width:100%;   
+    width:100%;
     margin:auto;
 }
 
@@ -66,6 +71,10 @@ img {
     padding:20px;
     a {
         color:white;
-        
+
+    }
+    .fa {
+        color: white;
+        padding:2px;
     }
 }
