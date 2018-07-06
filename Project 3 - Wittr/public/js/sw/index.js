@@ -1,3 +1,7 @@
 self.addEventListener('fetch', function(event) {
-  console.log(event.request);
+  // TODO: only respond to requests with a
+  // url ending in ".jpg"
+  event.respondWith(
+    fetch('/imgs/dr-evil.gif')
+  );
 });
