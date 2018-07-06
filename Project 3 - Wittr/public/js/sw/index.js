@@ -13,7 +13,7 @@ self.addEventListener('install', function(event) {
       ]);
     })
   );
-});
+})
 
 self.addEventListener('activate', function(event) {
   event.waitUntil(
@@ -37,6 +37,11 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
-
+//
 // TODO: listen for the "message" event, and call
 // skipWaiting if you get the appropriate message
+self.addEventListener('message', function(event){
+  if(event.data.action == 'skipWaiting'){
+    self.skipWaiting();
+  }
+});
