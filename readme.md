@@ -13,7 +13,9 @@
         2. Open the index.html
         3. Test the responsivity using the chrome dev tools.
 
+<br>
 <hr>
+<br>
 
 ## Project 2 : Responsive Blog
 
@@ -28,8 +30,29 @@
         2. Open the index.html
         3. Test the responsivity using the chrome dev tools.        
     
-## Amount of MegaBytes Transferred Before Stage 1 Image Optimization : 3.2 MB
+ #### Amount of MegaBytes Transferred Before Stage 1 Image Optimization : 3.2 MB
 <img src="https://raw.githubusercontent.com/tharunShiv/Udacity-Nanodegree-Projects-1/master/Project%202%20-%20Responsive%20Blog/beforeScreenshot.PNG" width="100%" >
 
-## Amount of MegaBytes Transferred After Stage 1 Image Optimization : 1.2 MB ( Almost 3x traffic reduction )
+ #### Amount of MegaBytes Transferred After Stage 1 Image Optimization : 1.2 MB ( Almost 3x traffic reduction )
 <img src="https://raw.githubusercontent.com/tharunShiv/Udacity-Nanodegree-Projects-1/master/Project%202%20-%20Responsive%20Blog/afterScreenshot.PNG" width="100%">
+
+<br>
+<hr>
+<br>
+
+## Project 3 : Wittr
+
+    About the project
+        1. This is a project where a dummy chat room is simulated
+        2. A PROGRESSIVE WEB APP is built.
+        3. This PWA can work offline, work like a native application in a phone.
+        4. It also stores a cached version of the images, pages and posts.
+        
+    How to view this project?
+        1. Clone the repo
+        2. open command line/git bash in the Wittr directory
+        3. npm install
+        4. npm run serve -> everytime you wanna run the App
+        5. Open the App in a localhost:8888
+        6. CTRL+C in the cmd line/gitbash to stop running
+
