@@ -56,3 +56,18 @@
         5. Open the App in a localhost:8888
         6. CTRL+C in the cmd line/gitbash to stop running
 
+## Project 4 : AJAX NEWS
+
+    About the project
+        1. This is a project to demonstrante the use of AJAX requests
+        2. Two APIs are used in this project
+        3. An image API, a NEWS API
+        4. When You search for a particular topic, you get an image for that word
+           and then a list of recent news for that topic
+           
+    How to view this project?
+        1. Clone this repo
+        2. Go to the index.html
+        3. Open with live server through VS Code, ATOM or by installing the live-server npm 
+ 
+ ### Please contribute to an of the following projects
