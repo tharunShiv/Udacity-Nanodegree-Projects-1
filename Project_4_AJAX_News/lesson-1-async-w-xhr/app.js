@@ -53,17 +53,16 @@
     // );
     // unsplashRequest.send();
     $.ajax({
-      url:
-        "https://api.unsplash.com/search/photos?page=1&query=${searchedForText}",
+      url: `https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`,
       headers: {
-        Authorization: myUnsplashKey
+        Authorization: "Client-ID " + myUnsplashKey
       }
     }).done(addImage);
 
     //Now for the News
-    function addArticles() {
+    function addArticles(data) {
       let htmlContent = "";
-      const data = JSON.parse(this.responseText);
+      //   const data = JSON.parse(this.responseText);
       console.log("addArticles fired");
       if (
         data.response &&
@@ -91,13 +90,16 @@
 
       responseContainer.insertAdjacentHTML("beforeend", htmlContent);
     }
-    const articleRequest = new XMLHttpRequest();
-    articleRequest.onload = addArticles;
-    articleRequest.open(
-      "GET",
-      `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=` +
-        myNYTkey
-    );
-    articleRequest.send();
+    // const articleRequest = new XMLHttpRequest();
+    // articleRequest.onload = addArticles;
+    // articleRequest.open(
+    //   "GET",
+    //   `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=` +
+    //     myNYTkey
+    // );
+    // articleRequest.send();
+    $.ajax({
+      url: `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=${myNYTkey}`
+    }).done(addArticles);
   });
 })();
