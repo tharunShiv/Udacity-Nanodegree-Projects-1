@@ -52,16 +52,30 @@
     //   "Client-ID " + myUnsplashKey
     // );
     // unsplashRequest.send();
-    $.ajax({
-      url: `https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`,
-      headers: {
-        Authorization: "Client-ID " + myUnsplashKey
+
+    // Using jQuery
+    // $.ajax({
+    //   url: `https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`,
+    //   headers: {
+    //     Authorization: "Client-ID " + myUnsplashKey
+    //   }
+    // })
+    //   .done(addImage)
+    //   .fail(function(err) {
+    //     requestError(err, "image");
+    //   });
+
+    // using fetchAPI
+    fetch(
+      `https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`,
+      {
+        headers: {
+          Authorization: "Client-ID " + myUnsplashKey
+        }
       }
-    })
-      .done(addImage)
-      .fail(function(err) {
-        requestError(err, "image");
-      });
+    ).then(function(response) {
+      debugger; // work with the returned response
+    });
 
     //Now for the News
     function addArticles(data) {
