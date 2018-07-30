@@ -57,7 +57,11 @@
       headers: {
         Authorization: "Client-ID " + myUnsplashKey
       }
-    }).done(addImage);
+    })
+      .done(addImage)
+      .fail(function(err) {
+        requestError(err, "image");
+      });
 
     //Now for the News
     function addArticles(data) {
@@ -100,6 +104,10 @@
     // articleRequest.send();
     $.ajax({
       url: `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=${myNYTkey}`
-    }).done(addArticles);
+    })
+      .done(addArticles)
+      .fail(function(err) {
+        requestError(err, "image");
+      });
   });
 })();
