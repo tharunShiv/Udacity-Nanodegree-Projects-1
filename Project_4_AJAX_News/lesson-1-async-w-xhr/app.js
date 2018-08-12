@@ -6,36 +6,37 @@
   // To hide the API Key from the Github
   let myUnsplashKey = config.MY_UNSPLASH_KEY;
   let myNYTkey = config.MY_NYT_KEY;
+
   form.addEventListener("submit", function(e) {
     e.preventDefault();
     responseContainer.innerHTML = "";
     let searchedForText = searchField.value;
 
-    function addImage(data) {
-      // setting a debugger - to stop here
-      // debugger;
-      // further
-      let htmlContent = "";
-      // const data = JSON.parse(this.responseText);
-      // observe this in the networks tab
-      // the response we've got
-      // below we are just capturing the first image
-      if (data && data.results && data.results[0]) {
-        const firstImage = data.results[0];
-        htmlContent = `<figure>
-                    <img src="${
-                      firstImage.urls.regular
-                    }" alt="${searchedForText}">
-                    <figcaption>${searchedForText} by ${
-          firstImage.user.name
-        }</figcaption>
-                </figure>`;
-      } else {
-        htmlContent = '<div class="error-no-image">No Images Available</div>';
-      }
+    // function addImage(data) {
+    //   // setting a debugger - to stop here
+    //   // debugger;
+    //   // further
+    //   let htmlContent = "";
+    //   // const data = JSON.parse(this.responseText);
+    //   // observe this in the networks tab
+    //   // the response we've got
+    //   // below we are just capturing the first image
+    //   if (data && data.results && data.results[0]) {
+    //     const firstImage = data.results[0];
+    //     htmlContent = `<figure>
+    //                 <img src="${
+    //                   firstImage.urls.regular
+    //                 }" alt="${searchedForText}">
+    //                 <figcaption>${searchedForText} by ${
+    //       firstImage.user.name
+    //     }</figcaption>
+    //             </figure>`;
+    //   } else {
+    //     htmlContent = '<div class="error-no-image">No Images Available</div>';
+    //   }
 
-      responseContainer.insertAdjacentHTML("afterbegin", htmlContent);
-    }
+    //   responseContainer.insertAdjacentHTML("afterbegin", htmlContent);
+    // }
     // searchedForText = 'hippos';
     // const unsplashRequest = new XMLHttpRequest();
     // unsplashRequest.onload = addImage;
@@ -74,15 +75,36 @@
         }
       }
     )
-      .then(function(response) {
-        // debugger; // work with the returned response
-        return response.json();
-      })
-      .then(addImage);
+      .then(response => response.json())
+      .then(addImage)
+      .catch(e => requestError(e, "image"));
 
     function addImage(data) {
-      debugger;
+      let htmlContent = "";
+      const firstImage = data.results[0];
+
+      if (firstImage) {
+        htmlContent = `<figure>
+                <img src="${firstImage.urls.small}" alt="${searchedForText}">
+                <figcaption>${searchedForText} by ${
+          firstImage.user.name
+        }</figcaption>
+            </figure>`;
+      } else {
+        htmlContent = "Unfortunately, no image was returned for your search.";
+      }
+
+      responseContainer.insertAdjacentHTML("afterbegin", htmlContent);
     }
+
+    function requestError(e, part) {
+      console.log(e);
+      responseContainer.insertAdjacentHTML(
+        "beforeend",
+        `<p class="network-warning">Oh no! There was an error making a request for the ${part}.</p>`
+      );
+    }
+
     //Now for the News
     function addArticles(data) {
       let htmlContent = "";
@@ -109,7 +131,7 @@
           "</ul>";
       } else {
         htmlContent =
-          'div class="error-no-articles">No articles available</div>';
+          '<div class="error-no-articles">No articles available</div>';
       }
 
       responseContainer.insertAdjacentHTML("beforeend", htmlContent);
@@ -122,12 +144,20 @@
     //     myNYTkey
     // );
     // articleRequest.send();
-    $.ajax({
-      url: `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=${myNYTkey}`
-    })
-      .done(addArticles)
-      .fail(function(err) {
-        requestError(err, "image");
-      });
+    // $.ajax({
+    //   url: `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=${myNYTkey}`
+    // })
+    //   .done(addArticles)
+    //   .fail(function(err) {
+    //     requestError(err, "image");
+    //   });
+
+    // using fetchAPI
+    fetch(
+      `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=${myNYTkey}`
+    )
+      .then(response => response.json())
+      .then(addArticles)
+      .catch(e => requestError(e, "article"));
   });
 })();
