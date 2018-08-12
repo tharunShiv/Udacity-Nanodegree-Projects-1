@@ -73,10 +73,16 @@
           Authorization: "Client-ID " + myUnsplashKey
         }
       }
-    ).then(function(response) {
-      debugger; // work with the returned response
-    });
+    )
+      .then(function(response) {
+        // debugger; // work with the returned response
+        return response.json();
+      })
+      .then(addImage);
 
+    function addImage(data) {
+      debugger;
+    }
     //Now for the News
     function addArticles(data) {
       let htmlContent = "";
